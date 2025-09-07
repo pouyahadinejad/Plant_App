@@ -5,7 +5,6 @@ import 'package:plant_app/screens/cart_page.dart';
 import 'package:plant_app/screens/favorite_page.dart';
 import 'package:plant_app/screens/home_page.dart';
 import 'package:plant_app/screens/profile_page.dart';
-import 'package:plant_app/screens/splash_screen.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
