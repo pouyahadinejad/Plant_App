@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Palnt App",
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }

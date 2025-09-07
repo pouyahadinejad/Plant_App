@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:plant_app/const/constans.dart';
 import 'package:plant_app/screens/root.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SplashScreenState extends State<SplashScreen> {
   final PageController _pageController = PageController(initialPage: 0);
   int currentIndex = 0;
 
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                           curve: Curves.easeIn,
                         );
                       }
-                    } else {  
+                    } else {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
