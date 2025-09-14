@@ -104,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: _plantTypes.length,
               ),
             ),
+            //products 1
             SizedBox(
               height: size.height * 0.3,
               child: ListView.builder(
@@ -204,6 +205,68 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            //products 2
+            Container(
+              padding: const EdgeInsets.only(
+                right: 18.0,
+                bottom: 15.0,
+                top: 20.0,
+              ),
+              alignment: Alignment.topRight,
+              child: const Text(
+                'گیاهان جدید',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 18.0,
+              ),
+              height: size.height * 0.3,
+              child: ListView.builder(
+                itemCount: _plantList.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 100.0,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      color: Constans.primaryColor.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    margin: const EdgeInsets.only(
+                      bottom: 10.0,
+                      top: 10.0,
+                    ),
+                    padding: const EdgeInsets.only(
+                      left: 10.0,
+                      top: 10.0,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text('22'),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 60.0,
+                              height: 60.0,
+                              decoration: BoxDecoration(
+                                color: Constans.primaryColor.withOpacity(0.8),
+                                shape: BoxShape.circle,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),
