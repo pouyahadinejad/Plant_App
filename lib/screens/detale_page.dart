@@ -205,8 +205,59 @@ class _DetalePageState extends State<DetalePage> {
                 ],
               ),
             ),
-          )
+          ),
         ],
+      ),
+      floatingActionButton: SizedBox(
+        width: size.width * 0.9,
+        height: 50.0,
+        child: Row(
+          children: [
+            Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0.0, 1.1),
+                    blurRadius: 5.0,
+                    color: Constans.primaryColor.withOpacity(0.3),
+                  ),
+                ],
+                color: Constans.primaryColor.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: const Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(width: 10.0),
+            Expanded(
+                child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0.0, 1.1),
+                    blurRadius: 5.0,
+                    color: Constans.primaryColor.withOpacity(0.3),
+                  ),
+                ],
+                color: Constans.primaryColor,
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: const Center(
+                child: Text(
+                  'افزودن به سبد خرید',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                ),
+              ),
+            ))
+          ],
+        ),
       ),
     );
   }
