@@ -71,7 +71,7 @@ class _DetalePageState extends State<DetalePage> {
               child: Stack(
                 children: [
                   Positioned(
-                    top: 10.0,
+                    top: 110.0,
                     left: 0.0,
                     child: SizedBox(
                         height: 300.0,
@@ -107,6 +107,53 @@ class _DetalePageState extends State<DetalePage> {
               ),
             ),
           ),
+          Positioned(
+            bottom: 0.0,
+            right: 0.0,
+            left: 0.0,
+            child: Container(
+              padding: const EdgeInsets.only(
+                top: 80.0,
+                left: 30.0,
+                right: 30.0,
+              ),
+              height: size.height * 0.5,
+              width: size.width,
+              decoration: BoxDecoration(
+                color: Constans.primaryColor.withOpacity(0.5),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(30.0),
+                  topRight: Radius.circular(30.0),
+                ),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.star),
+                          Text("4.3"),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text("سانسوریا"),
+                          SizedBox(height: 10.0),
+                          Text(r'$44'),
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
