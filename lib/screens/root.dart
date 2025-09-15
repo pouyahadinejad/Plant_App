@@ -5,6 +5,7 @@ import 'package:plant_app/screens/cart_page.dart';
 import 'package:plant_app/screens/favorite_page.dart';
 import 'package:plant_app/screens/home_page.dart';
 import 'package:plant_app/screens/profile_page.dart';
+import 'package:plant_app/screens/scan_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -68,7 +69,16 @@ class _RootPageState extends State<RootPage> {
         children: page,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScanPage(),
+              ),
+            );
+          });
+        },
         backgroundColor: Constans.primaryColor,
         child: Image.asset(
           'assets/images/code-scan-two.png',

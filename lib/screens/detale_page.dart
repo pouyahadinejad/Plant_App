@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/const/constans.dart';
+import 'package:plant_app/models/plant.dart';
 
 class DetalePage extends StatefulWidget {
   final int plantId;
@@ -11,6 +13,54 @@ class DetalePage extends StatefulWidget {
 class _DetalePageState extends State<DetalePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    Size size = MediaQuery.of(context).size;
+    List<Plant> plantList = Plant.plantList;
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned(
+            top: 50.0,
+            left: 20.0,
+            right: 20.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    height: 40.0,
+                    width: 40.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50.0),
+                      color: Constans.primaryColor.withOpacity(0.15),
+                    ),
+                    child: Icon(
+                      Icons.close,
+                      color: Constans.primaryColor,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 40.0,
+                  width: 40.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50.0),
+                    color: Constans.primaryColor.withOpacity(0.15),
+                  ),
+                  child: Icon(
+                    plantList[widget.plantId].isFavorated == true
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Constans.primaryColor,
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

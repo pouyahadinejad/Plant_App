@@ -49,7 +49,16 @@ class _SplashScreenState extends State<SplashScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 20.0, right: 20.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                setState(() {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RootPage(),
+                    ),
+                  );
+                });
+              },
               child: const Text(
                 "رد کردن",
                 style: TextStyle(

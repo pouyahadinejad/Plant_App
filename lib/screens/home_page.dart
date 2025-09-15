@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.only(top: 20.0),
               child: Center(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(),
+                  // padding: const EdgeInsets.symmetric(),
                   width: size.width * 0.9,
                   decoration: BoxDecoration(
                     color: Constans.primaryColor.withOpacity(0.1),
