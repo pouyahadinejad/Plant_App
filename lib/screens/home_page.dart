@@ -3,6 +3,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:plant_app/const/constans.dart';
 import 'package:plant_app/models/plant.dart';
 import 'package:plant_app/screens/detale_page.dart';
+import 'package:plant_app/widgets/extension.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -349,17 +350,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-}
-
-extension FarsiNumberExtension on String {
-  String get farsiNumber {
-    const english = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const farsi = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    String text = this;
-    for (int i = 0; i < english.length; i++) {
-      text = text.replaceAll(english[i], farsi[i]);
-    }
-    return text;
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/const/constans.dart';
 import 'package:plant_app/models/plant.dart';
+import 'package:plant_app/widgets/extension.dart';
 
 class DetalePage extends StatefulWidget {
   final int plantId;
@@ -74,28 +75,19 @@ class _DetalePageState extends State<DetalePage> {
                     right: 0.0,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "اندازه گیاه",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Constans.blackColor,
-                              ),
-                            ),
-                            Text(
-                              "کوجک",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Constans.primaryColor,
-                              ),
-                            ),
-                          ],
+                        PlantFeature(
+                          plantFeature: "اندازه گیاه",
+                          title: plantList[widget.plantId].size,
+                        ),
+                        PlantFeature(
+                          plantFeature: "رطوبت‌هوا",
+                          title: plantList[widget.plantId].humidity.toString(),
+                        ),
+                        PlantFeature(
+                          plantFeature: "دمای‌نگهداری",
+                          title: plantList[widget.plantId].temperature,
                         ),
                       ],
                     ),
@@ -106,6 +98,41 @@ class _DetalePageState extends State<DetalePage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class PlantFeature extends StatelessWidget {
+  final String title;
+  final String plantFeature;
+  const PlantFeature({
+    super.key,
+    required this.title,
+    required this.plantFeature,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Text(
+          plantFeature,
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+            color: Constans.blackColor,
+          ),
+        ),
+        Text(
+          title.farsiNumber,
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+            color: Constans.primaryColor,
+          ),
+        ),
+      ],
     );
   }
 }
