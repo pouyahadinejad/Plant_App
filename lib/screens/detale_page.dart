@@ -172,7 +172,7 @@ class _DetalePageState extends State<DetalePage> {
                                 'assets/images/PriceUnit-green.png',
                                 height: 20,
                               ),
-                              SizedBox(width: 10.0),
+                              const SizedBox(width: 10.0),
                               Text(
                                 plantList[widget.plantId]
                                     .price
@@ -189,6 +189,18 @@ class _DetalePageState extends State<DetalePage> {
                         ],
                       )
                     ],
+                  ),
+                  const SizedBox(height: 15.0),
+                  Text(
+                    textDirection: TextDirection.rtl,
+                    plantList[widget.plantId].decription,
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: Constans.blackColor.withOpacity(0.7),
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 18.0,
+                      height: 1.7,
+                    ),
                   )
                 ],
               ),
