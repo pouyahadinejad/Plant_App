@@ -72,24 +72,35 @@ class _DetalePageState extends State<DetalePage> {
                 children: [
                   Positioned(
                     top: 10.0,
+                    left: 0.0,
+                    child: SizedBox(
+                        height: 300.0,
+                        child: Image.asset(plantList[widget.plantId].imageURL)),
+                  ),
+                  Positioned(
+                    top: 10.0,
                     right: 0.0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        PlantFeature(
-                          plantFeature: "اندازه گیاه",
-                          title: plantList[widget.plantId].size,
-                        ),
-                        PlantFeature(
-                          plantFeature: "رطوبت‌هوا",
-                          title: plantList[widget.plantId].humidity.toString(),
-                        ),
-                        PlantFeature(
-                          plantFeature: "دمای‌نگهداری",
-                          title: plantList[widget.plantId].temperature,
-                        ),
-                      ],
+                    child: SizedBox(
+                      height: 200.0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          PlantFeature(
+                            plantFeature: "اندازه گیاه",
+                            title: plantList[widget.plantId].size,
+                          ),
+                          PlantFeature(
+                            plantFeature: "رطوبت‌هوا",
+                            title:
+                                plantList[widget.plantId].humidity.toString(),
+                          ),
+                          PlantFeature(
+                            plantFeature: "دمای‌نگهداری",
+                            title: plantList[widget.plantId].temperature,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
