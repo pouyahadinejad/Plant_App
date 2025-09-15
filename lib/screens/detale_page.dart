@@ -55,10 +55,55 @@ class _DetalePageState extends State<DetalePage> {
                         : Icons.favorite_border,
                     color: Constans.primaryColor,
                   ),
-                )
+                ),
               ],
             ),
-          )
+          ),
+          Positioned(
+            top: 100.0,
+            left: 20.0,
+            right: 20.0,
+            child: Container(
+              width: size.width * 0.8,
+              height: size.height * 0.8,
+              padding: const EdgeInsets.all(20.0),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 10.0,
+                    right: 0.0,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "اندازه گیاه",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Constans.blackColor,
+                              ),
+                            ),
+                            Text(
+                              "کوجک",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Constans.primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
