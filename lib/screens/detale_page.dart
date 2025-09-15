@@ -126,7 +126,7 @@ class _DetalePageState extends State<DetalePage> {
                   topRight: Radius.circular(30.0),
                 ),
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Row(
@@ -136,16 +136,56 @@ class _DetalePageState extends State<DetalePage> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Icon(Icons.star),
-                          Text("4.3"),
+                          Icon(
+                            Icons.star,
+                            size: 30.0,
+                            color: Constans.primaryColor,
+                          ),
+                          Text(
+                            plantList[widget.plantId]
+                                .rating
+                                .toString()
+                                .farsiNumber,
+                            style: TextStyle(
+                              fontSize: 23.0,
+                              color: Constans.primaryColor,
+                              // fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text("سانسوریا"),
-                          SizedBox(height: 10.0),
-                          Text(r'$44'),
+                          Text(
+                            plantList[widget.plantId].plantName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Constans.primaryColor,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                          const SizedBox(height: 10.0),
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/PriceUnit-green.png',
+                                height: 20,
+                              ),
+                              SizedBox(width: 10.0),
+                              Text(
+                                plantList[widget.plantId]
+                                    .price
+                                    .toString()
+                                    .farsiNumber,
+                                style: TextStyle(
+                                  fontSize: 23.0,
+                                  color: Constans.blackColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       )
                     ],
