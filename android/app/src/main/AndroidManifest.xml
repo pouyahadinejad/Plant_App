@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 <!-- Granting camera permission on Android -->
-<uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 <!-- Granting camera permission on Android -->
     <application
         android:label="plant_app"
