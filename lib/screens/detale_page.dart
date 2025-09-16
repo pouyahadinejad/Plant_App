@@ -12,6 +12,11 @@ class DetalePage extends StatefulWidget {
 }
 
 class _DetalePageState extends State<DetalePage> {
+  
+  bool toggleIsSelected(bool isSelected) {
+    return !isSelected;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -238,7 +243,7 @@ class _DetalePageState extends State<DetalePage> {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0.0, 1.1),
+                    offset: const Offset(0.0, 1.1),
                     blurRadius: 5.0,
                     color: Constans.primaryColor.withOpacity(0.3),
                   ),
@@ -246,12 +251,23 @@ class _DetalePageState extends State<DetalePage> {
                 color: Constans.primaryColor,
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: const Center(
-                child: Text(
-                  'افزودن به سبد خرید',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
+              child: Center(
+                child: InkResponse(
+                  onTap: () {
+                    setState(
+                      () {
+                        bool isSelected = toggleIsSelected(
+                            plantList[widget.plantId].isSelected);
+                        plantList[widget.plantId].isSelected = isSelected;
+                      },
+                    );
+                  },
+                  child: const Text(
+                    'افزودن به سبد خرید',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                    ),
                   ),
                 ),
               ),
