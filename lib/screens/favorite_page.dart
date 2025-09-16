@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/models/plant.dart';
+import 'package:plant_app/widgets/plant_widget.dart';
 
 class FavoritePage extends StatefulWidget {
   final List<Plant> favoitedplants;
@@ -39,11 +40,23 @@ class _FavoritePageState extends State<FavoritePage> {
                 ],
               ),
             )
-          : ListView.builder(
-              itemCount: widget.favoitedplants.length,
-              itemBuilder: (context, index) {
-                return const Text('pouya');
-              }),
+          : Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 12.0,
+                vertical: 30.0,
+              ),
+              height: size.height * 0.5,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: widget.favoitedplants.length,
+                itemBuilder: (context, index) {
+                  return NewPlantWidget(
+                    plantList: widget.favoitedplants,
+                    index: index,
+                  );
+                },
+              ),
+            ),
     );
   }
 }
