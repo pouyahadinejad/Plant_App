@@ -15,10 +15,35 @@ class FavoritePage extends StatefulWidget {
 class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("علاقه مندی ها"),
-      ),
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: widget.favoitedplants.isEmpty
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 100.0,
+                    child: Image.asset('assets/images/favorited.png'),
+                  ),
+                  const SizedBox(height: 20.0),
+                  const Text(
+                    "ظاهرا به هیچی علاقه نداشتی",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  )
+                ],
+              ),
+            )
+          : ListView.builder(
+              itemCount: widget.favoitedplants.length,
+              itemBuilder: (context, index) {
+                return const Text('pouya');
+              }),
     );
   }
 }
