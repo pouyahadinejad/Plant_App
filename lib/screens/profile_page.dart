@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/const/constans.dart';
+import 'package:plant_app/widgets/profile_widget.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -64,6 +65,32 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: Constans.blackColor.withOpacity(0.4),
                 fontSize: 16.0,
               ),
+            ),
+            const SizedBox(height: 30.0),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                BuildOpetions(
+                  icon: Icons.person,
+                  title: "پروفایل من",
+                ),
+                BuildOpetions(
+                  icon: Icons.settings,
+                  title: "تنظیمات",
+                ),
+                BuildOpetions(
+                  icon: Icons.notifications,
+                  title: "اطلاع رسانی ها",
+                ),
+                BuildOpetions(
+                  icon: Icons.share,
+                  title: "شبکه های اجتماعی",
+                ),
+                BuildOpetions(
+                  icon: Icons.logout,
+                  title: "خروج",
+                ),
+              ],
             )
           ],
         ),
