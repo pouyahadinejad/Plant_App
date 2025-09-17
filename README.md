@@ -21,34 +21,46 @@
 ## 📸 پیش‌نمایش اپلیکیشن
 
 ### 🚀 Splash Screens
-![Splash 1](assets/01.App-images/1.png)
-![Splash 2](assets/01.App-images/2.png)
-![Splash 3](assets/01.App-images/3.png)
+<p align="center">
+  <img src="assets/01.App-images/1.png" width="200" />
+  <img src="assets/01.App-images/2.png" width="200" />
+  <img src="assets/01.App-images/3.png" width="200" />
+</p>
 
 ---
 
 ### 🏠 Home
-![Home](assets/01.App-images/5.png)
+<p align="center">
+  <img src="assets/01.App-images/5.png" width="250" />
+</p>
 
 ---
 
 ### 🌱 Plant Scanner
-![Scanner](assets/01.App-images/7.png)
+<p align="center">
+  <img src="assets/01.App-images/7.png" width="250" />
+</p>
 
 ---
 
 ### ⭐ Favorites
-![Favorites](assets/01.App-images/8.png)
+<p align="center">
+  <img src="assets/01.App-images/8.png" width="250" />
+</p>
 
 ---
 
 ### 🛒 Cart
-![Cart](assets/01.App-images/9.png)
+<p align="center">
+  <img src="assets/01.App-images/9.png" width="250" />
+</p>
 
 ---
 
 ### 👤 User Profile
-![Profile](assets/01.App-images/10.png)
+<p align="center">
+  <img src="assets/01.App-images/10.png" width="250" />
+</p>
 
 ---
 
