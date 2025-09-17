@@ -36,6 +36,35 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
+            const SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "ساناز امینی",
+                  style: TextStyle(
+                    color: Constans.blackColor,
+                    fontSize: 20.0,
+                  ),
+                ),
+                const SizedBox(width: 5.0),
+                SizedBox(
+                  height: 20.0,
+                  child: Image.asset(
+                    'assets/images/verified.png',
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10.0),
+            Text(
+              'Sanaze@gmail.com',
+              style: TextStyle(
+                color: Constans.blackColor.withOpacity(0.4),
+                fontSize: 16.0,
+              ),
+            )
           ],
         ),
       ),
