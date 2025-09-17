@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/const/constans.dart';
 import 'package:plant_app/models/plant.dart';
+import 'package:plant_app/widgets/extension.dart';
 import 'package:plant_app/widgets/plant_widget.dart';
 
 class CartPage extends StatefulWidget {
@@ -26,17 +28,17 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   SizedBox(
                     height: 100.0,
-                    child: Image.asset('assets/images/favorited.png'),
+                    child: Image.asset('assets/images/add-cart.png'),
                   ),
                   const SizedBox(height: 20.0),
                   const Text(
-                    "ظاهرا به هیچی علاقه نداشتی",
+                    "سبد خریدت تار عنکبوت بسته",
                     textDirection: TextDirection.ltr,
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w300,
                     ),
-                  )
+                  ),
                 ],
               ),
             )
@@ -45,16 +47,62 @@ class _CartPageState extends State<CartPage> {
                 horizontal: 12.0,
                 vertical: 30.0,
               ),
-              height: size.height * 0.5,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                itemCount: widget.addedToCatPlants.length,
-                itemBuilder: (context, index) {
-                  return NewPlantWidget(
-                    plantList: widget.addedToCatPlants,
-                    index: index,
-                  );
-                },
+              // height: size.height * 0.5,
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: widget.addedToCatPlants.length,
+                      itemBuilder: (context, index) {
+                        return NewPlantWidget(
+                          plantList: widget.addedToCatPlants,
+                          index: index,
+                        );
+                      },
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      const Divider(
+                        thickness: 1.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                height: 20.0,
+                                child: Image.asset(
+                                  "assets/images/PriceUnit-green.png",
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5.0,
+                              ),
+                              Text(
+                                "33".farsiNumber,
+                                style: TextStyle(
+                                  color: Constans.primaryColor,
+                                  fontSize: 20.0,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            "جمع کل",
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                              color: Constans.blackColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
               ),
             ),
     );

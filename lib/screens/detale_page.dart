@@ -12,7 +12,6 @@ class DetalePage extends StatefulWidget {
 }
 
 class _DetalePageState extends State<DetalePage> {
-  
   bool toggleIsSelected(bool isSelected) {
     return !isSelected;
   }

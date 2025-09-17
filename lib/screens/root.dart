@@ -76,14 +76,16 @@ class _RootPageState extends State<RootPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ScanPage(),
-              ),
-            );
-          });
+          setState(
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ScanPage(),
+                ),
+              );
+            },
+          );
         },
         backgroundColor: Constans.primaryColor,
         child: Image.asset(
@@ -101,14 +103,16 @@ class _RootPageState extends State<RootPage> {
         gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.softEdge,
         onTap: (index) {
-          setState(() {
-            bottomIndex = index;
-            final List<Plant> favoitedplants = Plant.getFavoritedPlants();
-            final List<Plant> addedToCatPlants = Plant.addedToCartPlants();
+          setState(
+            () {
+              bottomIndex = index;
+              final List<Plant> favoitedplants = Plant.getFavoritedPlants();
+              final List<Plant> addedToCatPlants = Plant.addedToCartPlants();
 
-            favorited = favoitedplants.toSet().toList();
-            myCart = addedToCatPlants.toSet().toList();
-          });
+              favorited = favoitedplants.toSet().toList();
+              myCart = addedToCatPlants.toSet().toList();
+            },
+          );
         },
       ),
     );

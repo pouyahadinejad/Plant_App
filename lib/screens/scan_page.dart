@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:plant_app/const/constans.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:plant_app/screens/camera_page.dart';
 
 class ScanPage extends StatefulWidget {

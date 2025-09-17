@@ -74,10 +74,13 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           PageView(
             onPageChanged: (int page) {
-              setState(() {
-                currentIndex = page;
-              });
+              setState(
+                () {
+                  currentIndex = page;
+                },
+              );
             },
+            physics: const BouncingScrollPhysics(),
             controller: _pageController,
             children: [
               CreatePage(
